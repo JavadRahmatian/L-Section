@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Carousel</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="main-container-padding">
+			<div class="main-container">
+				<div class="right-container">
+					<div class="requested-loan-amount">
+						<span class="qt">میزان وام درخواستی</span>
+						<div>
+							<span class="num">10,000,000</span>
+							<span class="tooman">تومان</span>
+						</div>
+					</div>
+					<div class="input-container">
+						<span class="range-qt">10 میلیون</span>
+						<div class="input-range">
+							<input
+								type="range"
+								class="range"
+								min="0"
+								max="100"
+								value="0"
+								oninput="updateGradient(this)"
+							/>
+						</div>
+						<span class="range-qt">200 میلیون</span>
+					</div>
+					<h4>مدت بازپرداخت:</h4>
+					<div class="carousel">
+						<button class="prev">&#10094;</button>
+						<div>
+							<div class="items">
+								<div class="item active">12 ماهه</div>
+								<div class="item">24 ماهه</div>
+								<div class="item">36 ماهه</div>
+								<div class="item">48 ماهه</div>
+							</div>
+						</div>
+						<button class="next">&#10095;</button>
+					</div>
+				</div>
+
+				<div class="left-container">
+					<div class="left-inner-container">
+						<div class="price-row">
+							<span>مبلغ قسط نهایی</span>
+							<div class="price-tooman">
+								<span>12,323,998</span>
+								<span>تومان</span>
+							</div>
+						</div>
+						<div class="price-row">
+							<span>مابه‌التفاوت خرید نقدی و قسطی</span>
+							<div class="price-tooman">
+								<span>11,790,000</span>
+								<span>تومان</span>
+							</div>
+						</div>
+						<!-- <div class="price-row">
+            <span>اعتبار کیف پول فروشگاه</span>
+            <div>
+              <span>119,210,000</span>
+              <span>تومان</span>
+            </div>
+          </div> -->
+					</div>
+					<div class="btn">
+						<input
+							type="submit"
+							value="درخواست وام"
+							class="loan-request"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>

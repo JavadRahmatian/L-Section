@@ -1,0 +1,390 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+body {
+	/* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrinkdirection: column;
+    gap: 2rem;
+    height: 100vh; */
+	margin: 0;
+	font-family: 'shabnam medium';
+  /*! background-color: #115bbc; */
+}
+@font-face {
+  font-family: 'shabnam medium';
+	src: url(../fonts/Shabnam-Medium.ttf);
+}
+
+.main-container-padding{
+  padding: 0 5vw;
+}
+
+.main-container {
+  background-color: #ffffff;
+	margin-top: 5.0rem !important;
+	border-radius: 2.0rem;
+	/* border: .1rem solid #64748b; */
+  box-shadow: 0px 0px 8px 0.6px rgba(198, 198, 198, 0.66);
+	max-width: 1010px;
+	/*! height: 36rem; */
+	margin: 0 auto;
+	display: flex;
+}
+
+.right-container {
+	width: 100%;
+	height: 100%;
+	padding: 3.2rem;
+	/* border-left: .1rem solid #64748b ; */
+}
+
+.requested-loan-amount {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* flex-shrink: 0; */
+	color: rgb(16, 44, 143);
+	margin-bottom: 3.2rem;
+  
+}
+
+.requested-loan-amount .qt {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.requested-loan-amount div {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: rgb(0, 155, 157);
+}
+
+.requested-loan-amount .num {
+	font-size: 2.8rem;
+	font-weight: bold;
+	letter-spacing: 0;
+}
+.requested-loan-amount .tooman {
+	font-size: 1.8rem;
+}
+
+/* range */
+
+.input-container {
+	display: flex;
+	justify-content: center;
+	gap: 1.2rem;
+	align-items: baseline;
+}
+
+.range-qt {
+	color: #64748b;
+	font-size: 1.3rem;
+	font-weight: 500;
+	flex-shrink: 0;
+}
+
+.input-range {
+	margin-bottom: 3.4rem;
+
+	display: flex;
+	width: 100%;
+}
+
+.right-inner-container {
+	background-color: rgb(223, 255, 208);
+	width: 50%;
+	height: 50vh;
+}
+.left-inner-container {
+	background-color: rgb(255, 226, 214) ;
+	width: 50%;
+	height: 50vh;
+}
+
+.range {
+	-webkit-appearance: initial;
+	width: 100%;
+	height: .7rem;
+	background: #ddd; /* رنگ خالی (طوسی) */
+	border-radius: 1.0rem;
+	outline: none;
+	position: relative;
+	flex-shrink: 1;
+	cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 2.0rem;
+	height: 2.0rem;
+	background: #06b6d4; /* رنگ دایره (آبی) */
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	z-index: 2; /* بالا نگه داشتن دایره */
+  margin-top: -.6rem;
+}
+.range::-moz-range-thumb {
+	width: 2.0rem;
+	height: 2.0rem;
+	background: #06b6d4; /* رنگ دایره (آبی) */
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	z-index: 2; /* بالا نگه داشتن دایره */
+}
+
+/* قسمت پر و خالی نوار */
+.range::-webkit-slider-runnable-track {
+	background: linear-gradient(
+		to left,
+		#06b6d4 0%,
+		#06b6d4 var(--value),
+		#ddd var(--value),
+		#ddd 100%
+	);
+	height: .7rem;
+	border-radius: 1.0rem;
+}
+.range::-moz-range-track {
+	background: linear-gradient(
+		to left,
+		#06b6d4 0%,
+		#06b6d4 var(--value),
+		#ddd var(--value),
+		#ddd 100%
+	);
+	height: .7rem;
+	border-radius: 1.0rem;
+}
+
+h4 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #102c8f;
+}
+
+/*  */
+
+.carousel {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	/* width: 60vw; */
+	gap: 0.8rem;
+	/* outline: .1rem solid red; */
+}
+.carousel > div {
+	overflow-x: hidden;
+	flex-grow: 1;
+	/* outline: .1rem solid blue; */
+	/* display: flex; */
+}
+.items {
+	transition: 0.3s;
+	gap: var(--items-gap);
+	--items-shown: 3;
+	--items-gap: 1.6rem;
+	--item-width: calc(
+		100% / var(--items-shown) - var(--items-gap) * (var(--items-shown) - 1) /
+			var(--items-shown)
+	);
+	margin-right: calc(
+		(var(--item-width) + var(--items-gap)) *
+			(-1 * (var(--current, 0) - mod(var(--items-shown), 2)))
+	);
+	display: flex;
+
+	width: 100%;
+	/* width: 100%; */
+	/* margin: 0 .8rem; */
+}
+
+.item {
+	/* min-width: 20%; */
+	width: var(--item-width);
+	flex-shrink: 0;
+	height: 4rem;
+	/* margin: 0 .8rem; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f3ff;
+	transition: 0.3s;
+	color: #024caa;
+	border: #024caa 0.1rem solid;
+	font-size: 1.2rem;
+	border-radius: 1rem;
+	padding: 0.6rem 0.8rem;
+	cursor: pointer;
+	user-select: none;
+}
+
+.item:not(.active) {
+	opacity: 0.5;
+	transform: scale(0.8);
+	transform-origin: bottom;
+}
+
+button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	background-color: #024caa;
+	color: #fff;
+	border: none;
+	font-size: 1.8rem;
+	border-radius: 0.8rem;
+	height: 3.6rem;
+	width: 3.6rem;
+	cursor: pointer;
+	flex-grow: 0;
+	/* display: none;*/
+	z-index: 10000;
+}
+
+button:hover {
+	background-color: #115bbc;
+  box-shadow: 0px 0px 10px 0.9px rgb(187, 218, 255);
+
+}
+
+/*LEFT CONTAINER */
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+	width: 100%;
+	height: 100%;
+	padding: 3.2rem;
+  gap: 6.3rem;
+}
+
+.left-inner-container {
+	background-color: #EEF2FF;
+	width: 100%;
+	height: 62%;
+	border-radius: 2.0rem;
+	padding: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
+	gap: 0.5rem;
+	/*! margin-bottom: 6.3rem; */
+	box-shadow: 0px 0px 4px 0.5px rgba(104, 104, 104, 0.38);
+}
+
+.price-row {
+	display: flex;
+	justify-content: space-between;
+	color: #2852e4;
+
+	height: 4.0rem;
+	align-items: center;
+}
+
+.left-inner-container :first-child span {
+	font-weight: bold;
+}
+
+.price-row div :last-child {
+}
+
+.price-row {
+	display: flex;
+	justify-content: space-between;
+	color: #2852e4;
+	font-size: 1.7rem;
+	font-weight: 600;
+	gap: 1.5rem;
+}
+
+.left-inner-container :first-child span {
+	/* font-weight: bold ;
+  font-size: 1.6rem; */
+}
+
+.price-row div :last-child {
+	/* tooman size */
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+
+.price-tooman {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+}
+
+.loan-request {
+	width: 100%;
+	height: 5rem;
+	background-color: #024caa;
+	color: #fff;
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	/* font-weight: 500; */
+	font-family: 'shabnam medium';
+	cursor: pointer;
+}
+
+.loan-request:hover {
+	width: 100%;
+	height: 5rem;
+	background-color: #115bbc;
+  box-shadow: 0px 0px 10px 0.9px rgb(187, 218, 255);
+
+	color: #fff;
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	/* font-weight: 500; */
+	font-family: 'shabnam medium';
+	cursor: pointer;
+}
+
+@media (max-width:1200px){
+  .main-container{
+    flex-direction: column;
+    
+  }
+}
+
+@media(max-width:550px){
+  html{
+    font-size: 8.5px;
+    
+  }
+  .main-container{
+
+  }
+}
+
+/* @media (max-width: 1050px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    background-color: #024caa;
+  }
+
+} */
+
+/* @media (max-width: 1715px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container{
+    width: 40%;
+  }
+} */
